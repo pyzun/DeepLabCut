@@ -19,3 +19,4 @@ tensorpack==0.11
 tf_slim==1.1.0
 tqdm
 Pillow>=7.1
+git+https://github.com/pyzun/napari-DeepLabCut.git@my-keybindings/name#egg=napari-DeepLabCut

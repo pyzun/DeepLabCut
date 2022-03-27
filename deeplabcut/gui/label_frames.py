@@ -13,6 +13,7 @@ import os
 import pydoc
 import sys
 
+import dlclabel  # requires PyQt5==5.15.1
 import wx
 
 from deeplabcut.generate_training_dataset import check_labels
@@ -71,13 +72,18 @@ def label_frames(
     os.chdir(str(wd))
     cfg = auxiliaryfunctions.read_config(config)
     if cfg.get("multianimalproject", False) or multiple_individualsGUI:
-        from deeplabcut.gui import multiple_individuals_labeling_toolbox
+        #from deeplabcut.gui import multiple_individuals_labeling_toolbox
 
-        multiple_individuals_labeling_toolbox.show(config, config3d, sourceCam)
+        #multiple_individuals_labeling_toolbox.show(config, config3d, sourceCam)
+
+        dlclabel.show()
+
     else:
-        from deeplabcut.gui import labeling_toolbox
+        #from deeplabcut.gui import labeling_toolbox
 
-        labeling_toolbox.show(config, config3d, sourceCam, imtypes=imtypes)
+        #labeling_toolbox.show(config, config3d, sourceCam, imtypes=imtypes)
+
+        dlclabel.show()
 
     os.chdir(startpath)
 
